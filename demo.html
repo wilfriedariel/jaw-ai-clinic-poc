@@ -116,7 +116,7 @@ h2.sec{font-size:26px;margin:36px 0 6px}
 
 /* follow up */
 .layout{display:grid;grid-template-columns:minmax(300px,410px) 1fr;gap:18px;align-items:start}
-@media (max-width:880px){.layout{grid-template-columns:1fr}}
+@media (max-width:880px){.layout{grid-template-columns:minmax(0,1fr)}}.layout>*{min-width:0}
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
 .chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:500;transition:all .15s}
 .chip:hover{border-color:var(--berry)}
@@ -522,7 +522,7 @@ function renderAnswers(){
  $("qaBar").innerHTML=`<label><input type="checkbox" id="qaAll" ${all?"checked":""} ${ids.length?"":"disabled"}> Select all (${todo.length})</label>
   <span class="note" style="margin:0">${SEL.size} selected · ${ready.length-todo.length} sent · ${person.length} need a person</span>
   <button class="btn2 pri" id="qaSendSel" ${SEL.size?"":"disabled"}>Send ${SEL.size||""} selected</button>`;
- $("qaList").innerHTML=ready.map(x=>{const r=x.r,done=SENT.has(r.id),ed=EDITING.has(r.id);
+ $("qaList").innerHTML=[...todo,...ready.filter(x=>SENT.has(x.r.id))].map(x=>{const r=x.r,done=SENT.has(r.id),ed=EDITING.has(r.id);
   return `<div class="qa-card ${done?"sent":""}"><input type="checkbox" data-sel="${r.id}" ${SEL.has(r.id)?"checked":""} ${done?"disabled":""} aria-label="Select ${esc(r.name)}">
    <div><div class="qa-who">${avatar(r.name)}<b>${esc(r.name)}</b><span class="badge ${r.chance}">${r.chance} chance</span><span class="note" style="margin:0">${esc(r.treatment)} · waiting ${nz(r.days_since_contact)===0?"since today":nz(r.days_since_contact)+" day"+(nz(r.days_since_contact)===1?"":"s")}</span></div>
    <div class="qa-q">${esc(x.q)}<small>They asked</small></div>
