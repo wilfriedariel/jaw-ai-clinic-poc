@@ -35,3 +35,12 @@ If any fails, the result stands; no second fix round without a new contract.
 - Audience tab now also lists up to 2 "Promising, needs more data" groups (point lift >= 1.2x but not clearly above average after the small-sample bound). They are labelled as possibly luck and carry no claim.
 - Scoring, seed, thresholds, results.json unchanged. Parity re-run: 2128/2128, 0 mismatches.
 - Verified: 1280px headless-Chrome screenshots of Today / Follow up / Get new patients / Everyone. NOT verified: phone width, dark mode, Safari, behaviour when Google Fonts is offline (falls back to Georgia / system-ui).
+
+## Addendum 3 (2026-10-21, "Quick answers" screen, requested by Joyce; scoring untouched)
+- New screen between Today and Follow up: every open enquiry whose last message is theirs gets the question it asked, a suggested answer, and Send / Edit per person, plus tick boxes, Select all and "Send selected" (with a confirm step).
+- Rules, not a model: a keyword table maps the last message to price / slot / downtime / info / "let me think" (answerable) or promo / other (kept for a person, no draft). Misses fail safe to "needs a person".
+- Drafts never state a price, a time slot or a number. Price questions point to a consultation with Dr Cheak.
+- "Send" is simulated on practice data (marked sent, nothing leaves). On uploaded data it copies the text, because WhatsApp is not connected. Nothing is sent without a tick or a click and, for batches, a confirm.
+- Pre-registered checks, added to `parity_test.js`: intent table matches on 9 fixed strings; ready + needs-a-person equals the open waiting list exactly; no ready draft contains a digit or a currency sign; no needs-a-person item has a draft; both groups non-empty on the practice data. Result on this run: waiting 136 = ready 112 + person 24, 0 numeric drafts, 0 mismatches.
+- NOT verified: that the keyword table recognises real clinic chats (the practice chats are generated from the same phrases, so recognition here is circular); the wording of answers by the clinic; real WhatsApp delivery.
+- Scoring, seed, thresholds, results.json unchanged. Parity 2128/2128.
