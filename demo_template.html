@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lead Desk · S Aesthetics Clinic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#fbf6f1;--surface:#fff;--ink:#2b2224;--mute:#7c6f6c;--line:#eee3dc;
+ --berry:#8c2f5e;--berry-ink:#fff;--berry-soft:#f7e8ef;--peach:#f9ddd2;--lilac:#e9dcf0;
+ --high:#1d8a5a;--high-bg:#dff3e8;--mid:#b0761a;--mid-bg:#fbefd3;--low:#66768d;--low-bg:#e8edf3;--warn:#c2410c;--warn-bg:#fde8dc;
+ --shadow:0 1px 2px rgba(60,30,40,.05),0 8px 24px rgba(60,30,40,.06);
+ --serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --hero:linear-gradient(120deg,#f9ddd2 0%,#f3dbe5 52%,#e4d9f1 100%);
+}
+@media (prefers-color-scheme:dark){:root{
+ --bg:#181215;--surface:#231b1f;--ink:#f6eef0;--mute:#b3a3a8;--line:#3a2d33;
+ --berry:#e58bb4;--berry-ink:#2a0f1c;--berry-soft:#3a2230;--peach:#4a2c2c;--lilac:#33284a;
+ --high:#6fd4a2;--high-bg:#173225;--mid:#e8b45a;--mid-bg:#3a2d12;--low:#a9b6c9;--low-bg:#262c36;--warn:#ff9a6e;--warn-bg:#442416;
+ --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.28);
+ --hero:linear-gradient(120deg,#3b2327 0%,#35243a 55%,#2a2543 100%);}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.01em;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+.note{font-size:13.5px;color:var(--mute);margin:6px 0 0}
+.note.w{color:var(--warn)}
+.hide{display:none!important}
+
+/* ---------- hero ---------- */
+.hero{background:var(--hero);border-radius:0 0 32px 32px;padding:22px 0 44px;margin:0 -20px 0;position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;opacity:.55;pointer-events:none}
+.hero::before{width:340px;height:340px;right:-80px;top:-140px;background:radial-gradient(circle,#fff 0,rgba(255,255,255,0) 70%)}
+.hero::after{width:260px;height:260px;left:-90px;bottom:-150px;background:radial-gradient(circle,#fff 0,rgba(255,255,255,0) 70%)}
+.hero-in{max-width:1160px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600}
+.logo{width:34px;height:34px;border-radius:11px;background:var(--berry);color:var(--berry-ink);display:grid;place-items:center;font-family:var(--serif);font-size:18px}
+.brand small{display:block;font-weight:400;color:var(--mute);font-size:12.5px;line-height:1.1}
+.hbtns{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);background:color-mix(in srgb,var(--surface) 72%,transparent);backdrop-filter:blur(6px);border-radius:12px;padding:8px 14px;font-size:14px;font-weight:500;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px);background:var(--surface)}
+.btn.pri{background:var(--berry);color:var(--berry-ink);border-color:var(--berry)}
+.btn.pri:hover{background:var(--berry);filter:brightness(1.07)}
+label.btn{display:inline-block}
+.headline{font-size:clamp(30px,4.4vw,48px);line-height:1.08;margin:30px 0 10px;max-width:760px}
+.headline em{font-style:normal;color:var(--berry)}
+.sub{font-size:18px;color:color-mix(in srgb,var(--ink) 72%,transparent);max-width:660px;margin:0}
+.chipdemo{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:3px 11px;border-radius:99px;background:color-mix(in srgb,var(--surface) 75%,transparent);color:var(--mid);margin-top:16px}
+.chipdemo i{width:7px;height:7px;border-radius:50%;background:var(--mid)}
+
+.peek{position:absolute;right:20px;top:78px;width:330px;background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:16px 18px;box-shadow:0 18px 50px rgba(90,30,60,.18);animation:float .8s .25s cubic-bezier(.2,.7,.2,1) both;transform:rotate(1.5deg)}
+.peek .k{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:600;margin-bottom:10px}
+.peek .who{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.peek .who b{display:block;line-height:1.2}
+.peek .bub{background:var(--bg);border-radius:14px 14px 14px 5px;padding:9px 12px;font-size:14.5px}
+.peek .bub small{display:block;color:var(--mute);font-size:11.5px;margin-top:2px}
+.peek button{margin-top:12px;width:100%;border:0;border-radius:12px;background:var(--berry);color:var(--berry-ink);padding:9px;font-weight:600;font-size:14.5px;transition:filter .15s}
+.peek button:hover{filter:brightness(1.08)}
+@keyframes float{from{opacity:0;transform:translateY(18px) rotate(3deg)}to{opacity:1;transform:translateY(0) rotate(1.5deg)}}
+@media (max-width:1020px){.peek{display:none!important}}
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:20;margin:0 -20px;padding:12px 20px;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px)}
+.nav-in{max-width:1160px;margin:0 auto;display:flex;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:5px;box-shadow:var(--shadow);overflow-x:auto}
+.tab{flex:1;min-width:max-content;display:flex;align-items:center;gap:10px;border:0;background:none;border-radius:13px;padding:10px 16px;text-align:left;transition:background .2s,color .2s}
+.tab svg{width:22px;height:22px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:var(--mute);transition:color .2s}
+.tab b{display:block;font-size:15px;line-height:1.2}
+.tab span{display:block;font-size:12.5px;color:var(--mute);line-height:1.25}
+.tab:hover{background:var(--berry-soft)}
+.tab[aria-selected=true]{background:var(--berry);color:var(--berry-ink)}
+.tab[aria-selected=true] svg,.tab[aria-selected=true] span{color:inherit;opacity:.9}
+
+/* ---------- screens ---------- */
+.screen{animation:rise .45s cubic-bezier(.2,.7,.2,1) both;padding-top:26px}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.screen{animation:none}*{transition:none!important}}
+.what{display:flex;gap:12px;align-items:flex-start;background:var(--berry-soft);border-radius:16px;padding:14px 16px;margin-bottom:20px}
+.what svg{width:22px;height:22px;flex:none;stroke:var(--berry);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.what p{margin:0;font-size:15.5px}
+.what b{color:var(--berry)}
+h2.sec{font-size:26px;margin:36px 0 6px}
+.lead{color:var(--mute);margin:0 0 16px;max-width:760px}
+.cue{font-family:var(--serif);font-size:22px;color:var(--berry);margin:0 0 12px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px 20px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.stat .num{font-family:var(--serif);font-size:44px;line-height:1;font-weight:600}
+.stat .lbl{color:var(--mute);font-size:14.5px;margin-top:6px}
+
+/* today */
+.todo{display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.todo:hover{transform:translateY(-3px)}
+.todo .step{width:30px;height:30px;border-radius:50%;background:var(--berry);color:var(--berry-ink);display:grid;place-items:center;font-weight:700;font-size:14px}
+.todo h3{font-size:21px;line-height:1.2}
+.todo p{margin:0;color:var(--mute);font-size:15px;flex:1}
+.todo .go{align-self:flex-start;background:var(--berry-soft);color:var(--berry);border:0;border-radius:12px;padding:9px 15px;font-weight:600;font-size:14.5px;transition:background .15s,transform .15s}
+.todo .go:hover{background:var(--berry);color:var(--berry-ink);transform:translateX(2px)}
+.funnel{display:flex;flex-direction:column;gap:12px}
+.frow{display:grid;grid-template-columns:170px 1fr 52px;gap:12px;align-items:center;font-size:15px}
+.fbar{height:30px;border-radius:10px;background:var(--line);overflow:hidden}
+.fbar i{display:block;height:100%;border-radius:10px;width:0;transition:width .9s cubic-bezier(.2,.7,.2,1)}
+.frow b{font-family:var(--serif);font-size:20px;text-align:right}
+@media (max-width:560px){.frow{grid-template-columns:110px 1fr 44px;font-size:13.5px}}
+.how{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));counter-reset:h}
+.how div{position:relative;padding-left:46px}
+.how div::before{counter-increment:h;content:counter(h);position:absolute;left:0;top:0;width:34px;height:34px;border-radius:50%;background:var(--peach);color:var(--ink);display:grid;place-items:center;font-family:var(--serif);font-weight:600}
+.how b{display:block}
+.how span{color:var(--mute);font-size:14.5px}
+.split3{display:flex;height:16px;border-radius:99px;overflow:hidden;margin:12px 0 8px}
+.split3 i{display:block;height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;color:var(--mute)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;background:var(--c)}
+
+/* follow up */
+.layout{display:grid;grid-template-columns:minmax(300px,410px) 1fr;gap:18px;align-items:start}
+@media (max-width:880px){.layout{grid-template-columns:1fr}}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:7px 14px;font-size:14px;font-weight:500;transition:all .15s}
+.chip:hover{border-color:var(--berry)}
+.chip[aria-pressed=true]{background:var(--berry);color:var(--berry-ink);border-color:var(--berry)}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:20px;max-height:660px;overflow:auto;box-shadow:var(--shadow)}
+.row{display:flex;gap:12px;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:13px 14px;transition:background .15s}
+.row:last-child{border-bottom:0}
+.row:hover{background:color-mix(in srgb,var(--berry-soft) 55%,transparent)}
+.row[aria-current=true]{background:var(--berry-soft);box-shadow:inset 3px 0 0 var(--berry)}
+.av{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;flex:none;color:#3b2a30}
+.rb{min-width:0;flex:1}
+.rt{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.nm{font-weight:600}
+.sn{color:var(--mute);font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.meta{color:var(--mute);font-size:12.5px;margin-top:3px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;white-space:nowrap}
+.High{background:var(--high-bg);color:var(--high)}.Medium{background:var(--mid-bg);color:var(--mid)}.Low{background:var(--low-bg);color:var(--low)}.warn{background:var(--warn-bg);color:var(--warn)}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);position:sticky;top:96px;animation:rise .35s both}
+@media (max-width:880px){.panel{position:static}}
+.ph{display:flex;gap:14px;align-items:center}
+.ph .av{width:54px;height:54px;font-size:18px}
+.ph h3{font-size:25px;line-height:1.15}
+.panel h4{margin:22px 0 8px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-family:var(--sans);font-weight:600}
+.chat{background:var(--bg);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:82%;padding:9px 13px;border-radius:16px;font-size:15px;line-height:1.4}
+.msg small{display:block;color:var(--mute);font-size:11.5px;margin-top:3px}
+.msg.them{background:var(--surface);border:1px solid var(--line);border-bottom-left-radius:5px;align-self:flex-start}
+.msg.us{background:var(--berry-soft);border-bottom-right-radius:5px;align-self:flex-end}
+ul.why{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+ul.why li{display:flex;gap:10px;align-items:flex-start}
+ul.why li::before{content:"✓";flex:none;width:21px;height:21px;border-radius:50%;background:var(--high-bg);color:var(--high);display:grid;place-items:center;font-size:12px;font-weight:700;margin-top:2px}
+textarea{width:100%;min-height:118px;font:inherit;font-size:15px;line-height:1.5;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);resize:vertical}
+textarea:focus{outline:2px solid var(--berry);outline-offset:1px}
+.next{background:var(--peach);border-radius:14px;padding:11px 14px;font-weight:500;color:#3b2a30}
+
+/* ads */
+.aud{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.audc.maybe{background:transparent;border-style:dashed;box-shadow:none}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--mid-bg);color:var(--mid);margin-bottom:8px}
+.audc{position:relative;overflow:hidden}
+.audc:hover{transform:translateY(-3px)}
+.mult{font-family:var(--serif);font-size:54px;line-height:1;color:var(--berry);font-weight:600}
+.mult.bad{color:var(--low)}
+.audc h3{font-size:19px;margin:8px 0 4px}
+.spec{background:var(--bg);border-radius:12px;padding:10px 12px;font-size:14px;margin:12px 0}
+.tbl{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:13px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);font-weight:600;background:color-mix(in srgb,var(--bg) 60%,var(--surface))}
+.tbl tbody tr.click{cursor:pointer;transition:background .12s}.tbl tbody tr.click:hover{background:var(--berry-soft)}
+.scroll{overflow-x:auto;border-radius:20px}
+.cbar{display:flex;align-items:center;gap:10px}
+.cbar i{display:block;height:10px;border-radius:99px;background:var(--berry);opacity:.85;min-width:3px;transition:width .6s}
+input[type=number],input[type=search],select{font:inherit;font-size:15px;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+input[type=search]{min-width:240px}
+input[type=number]{width:88px;border-color:var(--berry);background:var(--berry-soft)}
+input:focus,select:focus{outline:2px solid var(--berry);outline-offset:1px}
+.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.btn2{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:9px 15px;font-size:14.5px;font-weight:500;transition:all .15s}
+.btn2:hover{border-color:var(--berry);color:var(--berry)}
+.btn2.pri{background:var(--berry);color:var(--berry-ink);border-color:var(--berry)}
+.btn2.pri:hover{color:var(--berry-ink);filter:brightness(1.08)}
+details{margin-top:40px;color:var(--mute);font-size:14.5px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 18px}
+details summary{cursor:pointer;color:var(--ink);font-weight:600}
+dialog{border:0;border-radius:24px;background:var(--surface);color:var(--ink);max-width:680px;width:calc(100% - 28px);padding:24px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(30,12,20,.5);backdrop-filter:blur(3px)}
+</style></head><body>
+<div class="wrap">
+
+<!-- ================= HERO ================= -->
+<div class="hero"><div class="hero-in">
+ <div class="top">
+  <div class="brand"><div class="logo">S</div><div>S Aesthetics Clinic<small>Lead Desk</small></div></div>
+  <div class="hbtns">
+   <label class="btn pri">Load my own contacts<input id="up" type="file" accept=".csv,text/csv" hidden></label>
+   <button class="btn" id="tpl">Get the sample file</button>
+   <button class="btn hide" id="rst">Back to practice data</button>
+  </div>
+ </div>
+ <h1 class="headline">Know <em>who to message today</em>, and who to show your ads to.</h1>
+ <p class="sub">Lead Desk reads your clinic's WhatsApp chats and patient list, ranks who is most likely to book, and suggests what to say. Your team stays in charge of every message.</p>
+ <span class="chipdemo" id="mode"><i></i>Practice data. These are made-up patients.</span>
+<aside class="peek hide" id="peek"></aside>
+</div></div>
+
+<!-- ================= NAV ================= -->
+<div class="nav"><div class="nav-in" role="tablist">
+ <button class="tab" role="tab" data-tab="today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><div><b>Today</b><span>What to do first</span></div></button>
+ <button class="tab" role="tab" data-tab="inbox"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.7A8 8 0 1 1 21 12z"/></svg><div><b>Follow up</b><span>People who texted us</span></div></button>
+ <button class="tab" role="tab" data-tab="grow"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg><div><b>Get new patients</b><span>Ads and where to spend</span></div></button>
+ <button class="tab" role="tab" data-tab="db"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><div><b>Everyone</b><span>All contacts, searchable</span></div></button>
+</div></div>
+
+<!-- ================= TODAY ================= -->
+<section id="today" class="screen">
+ <div class="what"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><p id="todayWhat"></p></div>
+ <div class="grid g3" id="todos"></div>
+
+ <h2 class="sec">Where your recent enquiries stand</h2>
+ <p class="lead" id="funnelLead"></p>
+ <div class="card"><div class="funnel" id="funnel"></div></div>
+
+ <h2 class="sec">How likely is everyone to book?</h2>
+ <p class="lead">Every person who messaged you and hasn't booked yet, sorted by how likely they are to say yes.</p>
+ <div class="card"><div class="split3" id="split3"></div><div class="legend" id="legend"></div></div>
+
+ <h2 class="sec">How it works</h2>
+ <div class="card"><div class="how">
+  <div><b>It reads every chat</b><span>Did they ask the price? Ask for a time? Reply quickly? Or go quiet?</span></div>
+  <div><b>It shows its reasons</b><span>Each person has a short list of why they are ranked High, Medium or Low.</span></div>
+  <div><b>Your team decides</b><span>We write a draft. A person edits and sends it. Nothing goes out by itself.</span></div>
+ </div></div>
+</section>
+
+<!-- ================= FOLLOW UP ================= -->
+<section id="inbox" class="screen hide">
+ <div class="what"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><p>These are people who <b>messaged your clinic on WhatsApp but haven't booked yet</b>. The ones most likely to book are at the top, so your team calls the right people first.</p></div>
+ <div class="grid g4" id="inboxCards" style="margin-bottom:22px"></div>
+ <p class="cue">Click anyone below to read their chat and get a reply ready →</p>
+ <div class="layout">
+  <div>
+   <div class="chips" id="inboxChips"></div>
+   <div class="list" id="inboxList"></div>
+   <p class="note" id="inboxCount"></p>
+  </div>
+  <div class="panel" id="inboxPanel"></div>
+ </div>
+</section>
+
+<!-- ================= GROW ================= -->
+<section id="grow" class="screen hide">
+ <div class="what"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><p>This page answers two questions: <b>who should your ads be shown to</b>, and <b>which places that send you patients are worth paying for</b>. It learns from everyone who has enquired before and whether they booked.</p></div>
+
+ <h2 class="sec" style="margin-top:6px">Who to show your ads to</h2>
+ <p class="lead" id="audLead"></p>
+ <div class="aud" id="audCards"></div>
+ <h3 id="skipHead" class="hide" style="font-size:20px;margin:26px 0 12px">Groups that book less often. Try leaving them out of your ads</h3>
+ <div class="aud" id="skipCards"></div>
+
+ <h2 class="sec">Where your patients come from, and what each is worth</h2>
+ <p class="lead">For each place, how many enquiries turned into a booking, and what one booking costs you. <b style="color:var(--berry)">The cost per enquiry is our guess. Type your real number into the pink boxes.</b></p>
+ <div class="scroll"><table class="tbl" id="chanTbl"></table></div>
+ <p class="note">"Spend more" means a booking costs clearly less than average. "Cut back" means clearly more. Small numbers swing, so check again after a month.</p>
+
+ <h2 class="sec">Reach people similar to your best patients</h2>
+ <p class="lead">Facebook, Instagram and Google can find new people who look like a list you give them. We only put people on these lists if they said yes to marketing.</p>
+ <div class="grid g3" id="listCards"></div>
+ <p class="note">We never buy or scrape phone numbers. Messaging strangers who haven't agreed breaks Singapore's Do Not Call rules. The ad platforms find new people for you without handing over their numbers.</p>
+</section>
+
+<!-- ================= DATABASE ================= -->
+<section id="db" class="screen hide">
+ <div class="what"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg><p>Everyone in one list: <b>people who enquired and your existing patients</b>. Search, filter, and click a row to see why they are ranked where they are.</p></div>
+ <div class="tools">
+  <input type="search" id="dbq" placeholder="Search a name or treatment">
+  <select id="dbType"><option value="">Enquiries and patients</option><option value="lead">Enquiries only</option><option value="patient">Patients only</option></select>
+  <select id="dbChance"><option value="">Any chance to book</option><option>High</option><option>Medium</option><option>Low</option></select>
+  <select id="dbStatus"><option value="">Open and booked</option><option value="open">Not booked yet</option><option value="booked">Already booked</option></select>
+  <select id="dbConsent"><option value="">Marketing: any</option><option value="1">Said yes to marketing</option><option value="0">Has not said yes</option></select>
+  <button class="btn2 pri" id="dbCsv">Download this list</button>
+ </div>
+ <div class="scroll"><table class="tbl" id="dbTbl"></table></div>
+ <p class="note" id="dbCount"></p>
+</section>
+
+<details id="about"><summary>How does the ranking work, and how far can we trust it?</summary><div id="aboutBody" style="margin-top:10px"></div></details>
+<dialog id="dlg"><div id="dlgBody"></div><div style="text-align:right;margin-top:14px"><button class="btn2" id="dlgClose">Close</button></div></dialog>
+</div>
+
+<script>
+/*DATA*/
+/* =====================================================================
+   Lead Desk. Everything runs in this page; nothing is uploaded or sent.
+   1 Constants   2 Ranking rules   3 Preparing contacts   4 Learning audiences
+   5 Screens (Today, Follow up, Get new patients, Everyone)   6 CSV in/out
+   ===================================================================== */
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pct=x=>Math.round(100*x)+"%";
+
+/* ---------- 1. Constants ---------- */
+const VISIT_INTERVAL={"Laser hair removal":42,"Pigmentation laser":35,"Acne scar treatment":30,"Facial":28,"Injectables":120,"Body contouring":21};
+const DEFAULT_COST={"Meta ad":14,"Instagram organic":4,"Google search":18,"Referral":6,"WhatsApp walk-in":3};   // S$ per enquiry. A GUESS until the clinic types its own.
+const PLACE_NAME={"Meta ad":"Facebook & Instagram ads","Instagram organic":"Instagram (unpaid)","Google search":"Google search","Referral":"Referrals","WhatsApp walk-in":"WhatsApp direct"};
+const place=s=>PLACE_NAME[s]||s;
+const NUM=["age","msgs","days_since_contact","reply_latency_h","days_since_enquiry","visits","last_visit_days","sessions_left","package_expiry_days","spend"];
+const BOOL=["consent","asked_price","asked_slots","next_booking","converted"];
+const COLUMNS=["id","name","phone","kind","age","area","treatment","source","consent","asked_price","asked_slots","msgs","days_since_contact","reply_latency_h","days_since_enquiry","last_message","last_from","visits","last_visit_days","next_booking","sessions_left","package_expiry_days","spend","converted"];
+const INBOX_WINDOW_DAYS=14, QUIET_AFTER_DAYS=3;
+const nz=x=>(x===null||x===undefined||x==="")?NaN:Number(x);
+const AVATARS=["#f9ddd2","#e9dcf0","#dcecf3","#e3efd9","#fbe9c9","#f4d9e4"];
+const initials=n=>String(n||"?").split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();
+const avColor=n=>AVATARS[[...String(n)].reduce((a,c)=>a+c.charCodeAt(0),0)%AVATARS.length];
+const avatar=n=>`<div class="av" style="background:${avColor(n)}">${esc(initials(n))}</div>`;
+
+/* ---------- 2. Ranking rules ----------
+   Plain points. Start at 30; each rule adds or removes points and records its reason.
+   62+ = High chance to book, 40-61 Medium, below 40 Low.
+   (JS and the Python pipeline must agree; parity_test.js checks every row.) */
+function scoreContact(r){
+ let s=30; const hits=[]; const add=(p,t)=>{s+=p;hits.push([p,t]);};
+ if(r.kind==="lead"){
+  const msgs=nz(r.msgs), quiet=nz(r.days_since_contact), reply=nz(r.reply_latency_h), age=nz(r.days_since_enquiry);
+  if(r.asked_price) add(14,"asked the price");
+  if(r.asked_slots) add(18,"asked for a slot");
+  if(msgs>=6) add(10,`${msgs} messages, engaged`); else if(msgs<=2) add(-8,"only 1-2 messages");
+  if(quiet<=2) add(14,"contacted within 2 days"); else if(quiet>14) add(-16,`silent ${quiet} days`);
+  if(reply<2) add(10,"replies within 2h"); else if(reply>24) add(-10,"slow to reply (>24h)");
+  if(r.source==="Referral") add(10,"referral");
+  if(r.source==="Meta ad") add(-4,"cold paid-social source");
+  if(age>30) add(-8,"enquiry older than 30 days");
+ }else{
+  const gap=VISIT_INTERVAL[r.treatment], since=nz(r.last_visit_days), left=nz(r.sessions_left), expiry=nz(r.package_expiry_days), visits=nz(r.visits), spend=nz(r.spend);
+  const ratio=since/gap;
+  if(ratio>=0.8&&ratio<=1.6) add(18,`due for ${r.treatment} review (${since}d vs ${gap}d interval)`);
+  else if(ratio>4) add(-18,`lapsed (${since}d since visit)`);
+  else if(ratio>2.2) add(-4,"lapsing");
+  if(left>0&&expiry<=42) add(16,`${left} sessions expire in ${expiry}d`);
+  if(visits>=8) add(8,`${visits} visits, loyal`);
+  if(spend>=2000) add(5,"high-spend patient");
+ }
+ s=Math.max(0,Math.min(100,s));
+ const reasons=hits.map((h,i)=>[h,i]).sort((a,b)=>Math.abs(b[0][0])-Math.abs(a[0][0])||a[1]-b[1]).slice(0,4).map(x=>x[0][1]);
+ return {score:s,reasons};
+}
+const chanceOf=s=>s>=62?"High":s>=40?"Medium":"Low";
+
+/* ---------- 3. Preparing contacts ---------- */
+function prepare(rows){
+ return rows
+  .filter(r=>!(r.kind==="patient"&&r.next_booking))       // already booked: nothing to chase
+  .map(r=>{const {score,reasons}=scoreContact(r);
+    const quiet=nz(r.days_since_contact);
+    const chat=r.chat&&r.chat.length?r.chat:(r.last_message?[{who:r.last_from==="us"?"us":"them",text:r.last_message,days_ago:quiet||0}]:[]);
+    const last=chat.length?chat[chat.length-1]:null;
+    return {...r,score,reasons,chance:chanceOf(score),chat,lastWho:last?last.who:null,name:r.name||r.id};})
+  .sort((a,b)=>b.score-a.score);
+}
+const isBooked=r=>r.kind==="lead"&&!!r.converted;
+const isRecentLead=r=>r.kind==="lead"&&nz(r.days_since_enquiry)<=INBOX_WINDOW_DAYS;
+const isOpenLead=r=>isRecentLead(r)&&!r.converted;
+const isQuiet=r=>r.lastWho==="us"&&nz(r.days_since_contact)>=QUIET_AFTER_DAYS;
+
+/* ---------- 4. Learning which audiences book ----------
+   From past enquiries (booked or not): which groups booked more than the average enquiry.
+   "Clearly better" = still better than average after allowing for small samples (Wilson 95% bound). */
+function wilson(k,n,z=1.96){if(!n)return[0,0];const p=k/n,d=1+z*z/n,c=p+z*z/(2*n),m=z*Math.sqrt(p*(1-p)/n+z*z/(4*n*n));return [(c-m)/d,(c+m)/d];}
+const ageBand=a=>a<=27?"under 28":a<=35?"28 to 35":a<=45?"36 to 45":"46 and over";
+const ageRange=b=>({"under 28":"18 to 27","28 to 35":"28 to 35","36 to 45":"36 to 45","46 and over":"46 to 65"}[b]);
+function dedupe(list){ // drop a group that is just a broader/narrower version of one already listed
+ const out=[]; list.forEach(s=>{const set=new Set(s.parts); if(!out.some(o=>{const t=new Set(o.parts);return [...t].every(x=>set.has(x))||[...set].every(x=>t.has(x));})) out.push(s);}); return out;}
+function learnAudiences(C){
+ const past=C.filter(r=>r.kind==="lead"&&r.converted!==null&&r.converted!==undefined);
+ if(past.length<120) return null;
+ const base=past.filter(r=>r.converted).length/past.length;
+ past.forEach(r=>r.band=ageBand(nz(r.age)));
+ const groupings=[["treatment"],["band"],["area"],["treatment","band"],["treatment","area"],["band","area"]], found=[];
+ groupings.forEach(g=>{const m={};
+  past.forEach(r=>{const key=g.map(f=>r[f]).join("|");(m[key]=m[key]||{n:0,k:0,parts:g.map(f=>r[f])});m[key].n++;m[key].k+=r.converted?1:0;});
+  Object.values(m).forEach(x=>{if(x.n<40)return; const [lo,hi]=wilson(x.k,x.n);
+   found.push({fields:g,parts:x.parts,n:x.n,rate:x.k/x.n,times:x.k/x.n/base,safeTimes:lo/base,topTimes:hi/base});});});
+ return {base,n:past.length,
+  best:dedupe(found.filter(f=>f.safeTimes>1).sort((a,b)=>b.safeTimes-a.safeTimes)).slice(0,4),
+  worst:dedupe(found.filter(f=>f.topTimes<1).sort((a,b)=>a.topTimes-b.topTimes)).slice(0,2),
+  // leaning better, but the sample is too small to rule out luck: shown separately and labelled
+  maybe:dedupe(found.filter(f=>f.times>=1.2&&f.safeTimes<=1).sort((a,b)=>b.times-a.times)).slice(0,2)};
+}
+function describe(seg){ // a group, in ad-targeting words
+ const o={}; seg.fields.forEach((f,i)=>o[f]=seg.parts[i]);
+ const bits=[]; if(o.treatment)bits.push(o.treatment); if(o.band)bits.push("aged "+ageRange(o.band)); if(o.area)bits.push(o.area+" Singapore");
+ return {title:bits.join(", "),
+  spec:[o.band?`Age: ${ageRange(o.band).replace(" to ","–")}`:null, o.area?`Location: ${o.area} area`:`Location: Singapore`, o.treatment?`Interest: ${o.treatment.toLowerCase()}`:null].filter(Boolean).join("  ·  ")};
+}
+function channelRows(){ // enquiries -> bookings per place, with cost per booking from the editable costs
+ const by={}; ALL.filter(r=>r.kind==="lead"&&r.converted!==null&&r.converted!==undefined).forEach(r=>{const s=r.source||"Unknown";(by[s]=by[s]||{n:0,k:0});by[s].n++;by[s].k+=r.converted?1:0;});
+ const rows=Object.entries(by).map(([s,v])=>({s,...v,cost:COST[s]??0}));
+ rows.forEach(r=>r.perBooking=r.k&&r.cost?r.cost*r.n/r.k:NaN);
+ const known=rows.map(r=>r.perBooking).filter(x=>x>0).sort((a,b)=>a-b), med=known.length?known[Math.floor(known.length/2)]:NaN;
+ rows.forEach(r=>r.verdict=!(r.perBooking>0)?"Enter a cost":r.perBooking<med*0.75?"Spend more":r.perBooking>med*1.35?"Cut back":"Keep");
+ return rows;
+}
+
+/* ---------- 5. Screens ---------- */
+let ALL=[], DEMO=true, FILTER="all", PICK=null, COST={...DEFAULT_COST};
+const TABS=["today","inbox","grow","db"];
+let TAB=(typeof location!=="undefined"&&TABS.includes(location.hash.replace("#tab-","")))?location.hash.replace("#tab-",""):"today";
+
+function countUp(el,to){ // numbers rise once when a screen opens; plain text if animation is unavailable
+ el.textContent=to;
+ if(typeof requestAnimationFrame!=="function"||(typeof matchMedia==="function"&&matchMedia("(prefers-reduced-motion:reduce)").matches)||to<10)return;
+ const t0=performance.now();(function f(t){const k=Math.min(1,(t-t0)/700);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f);})(t0);
+}
+const bigNums=()=>document.querySelectorAll("[data-count]").forEach(e=>countUp(e,Number(e.dataset.count)));
+const go=(tab,filter)=>{if(filter)FILTER=filter;PICK=null;show(tab);window.scrollTo({top:0,behavior:"smooth"});};
+
+/* --- Today --- */
+function renderToday(){
+ const recent=ALL.filter(isRecentLead), open=recent.filter(r=>!r.converted), booked=recent.length-open.length;
+ const waiting=open.filter(r=>r.lastWho==="them"), quiet=open.filter(isQuiet), worth=quiet.filter(r=>r.chance==="High");
+ const longest=waiting.length?Math.max(...waiting.map(r=>nz(r.days_since_contact))):0;
+ $("todayWhat").innerHTML=`<b>Start here.</b> In the last ${INBOX_WINDOW_DAYS} days, <b>${open.length} people</b> messaged your clinic and haven't booked. Below are the three things worth doing today, in order.`;
+ const rows=channelRows().filter(r=>r.perBooking>0).sort((a,b)=>a.perBooking-b.perBooking), best=rows[0], worst=rows[rows.length-1];
+ const money=best&&worst&&best!==worst?`A booking from <b>${esc(place(worst.s))}</b> costs about <b>S$${worst.perBooking.toFixed(0)}</b>. From <b>${esc(place(best.s))}</b> it is about <b>S$${best.perBooking.toFixed(0)}</b>. Consider moving some budget. (Uses estimated ad costs: enter yours.)`:"Add your ad costs to see where money works hardest.";
+ $("todos").innerHTML=[
+  [1,`Reply to <span data-count="${waiting.length}">${waiting.length}</span> people waiting`,`They wrote last and nobody has answered yet.${longest?` The longest wait is ${longest} day${longest===1?"":"s"}.`:""} A quick reply is the cheapest way to win a booking.`,"Open the waiting list"],
+  [2,`Call <span data-count="${worth.length}">${worth.length}</span> who went quiet but look keen`,"We replied, they stopped answering, yet their messages suggest real interest. A friendly call or message often gets them back.","See who to call"],
+  [3,"Put ad money where it works",money,"See where to spend"]
+ ].map(([n,h,p,b],i)=>`<div class="card todo"><div class="step">${n}</div><h3>${h}</h3><p>${p}</p><button class="go" data-todo="${i}">${b} →</button></div>`).join("");
+ const acts=[()=>go("inbox","waiting"),()=>go("inbox","worth"),()=>go("grow")];
+ document.querySelectorAll("[data-todo]").forEach(b=>b.onclick=acts[b.dataset.todo]);
+ $("funnelLead").textContent=`Everyone who first messaged in the last ${INBOX_WINDOW_DAYS} days.`;
+ const mx=Math.max(1,recent.length);
+ $("funnel").innerHTML=[["Enquired",recent.length,"var(--berry)"],["Booked",booked,"var(--high)"],["Not booked yet",open.length,"var(--mid)"],["…of those, waiting for us",waiting.length,"var(--warn)"]]
+  .map(([l,n,c])=>`<div class="frow"><span>${l}</span><div class="fbar"><i style="background:${c}" data-w="${100*n/mx}"></i></div><b>${n}</b></div>`).join("");
+ setTimeout(()=>document.querySelectorAll("#funnel i").forEach(i=>i.style.width=i.dataset.w+"%"),60);
+ const c={High:0,Medium:0,Low:0}; open.forEach(r=>c[r.chance]++); const tot=Math.max(1,open.length);
+ const col={High:"var(--high)",Medium:"var(--mid)",Low:"var(--low)"}, words={High:"High chance",Medium:"Medium chance",Low:"Low chance"};
+ $("split3").innerHTML=["High","Medium","Low"].map(k=>`<i style="width:${100*c[k]/tot}%;background:${col[k]}"></i>`).join("");
+ $("legend").innerHTML=["High","Medium","Low"].map(k=>`<span style="--c:${col[k]}"><b style="color:var(--ink)">${c[k]}</b> ${words[k]}</span>`).join("");
+}
+
+/* --- Follow up --- */
+function draftReply(r){
+ const first=(r.name||"").split(" ")[0]||"there", tr=(r.treatment||"your treatment").toLowerCase();
+ if(r.lastWho==="them"){
+  if(r.asked_price) return `Hi ${first}, thanks for asking about ${tr}. The price depends on the area and number of sessions, so the easiest way to give you an accurate answer is a short consultation with Dr Cheak. Is there a skin concern you'd like to improve?`;
+  if(r.asked_slots) return `Hi ${first}, thanks for your message. Would a weekday evening or a weekend suit you for a consultation about ${tr}? I'll find a time that works.`;
+  return `Hi ${first}, thanks for getting back to me. Happy to answer any questions about ${tr}. What matters most to you: results, downtime or price?`;
+ }
+ if(r.asked_slots) return `Hi ${first}, following up on the time you asked about for ${tr}. Would a consultation this week suit you? Happy to find a slot that fits.`;
+ return `Hi ${first}, just checking in about ${tr}. Is there anything I can answer for you? If you'd like, I can arrange a short consultation with Dr Cheak.`;
+}
+const ago=d=>d===0?"today":d===1?"yesterday":`${d} days ago`;
+function chatHTML(r){
+ if(!r.chat.length) return `<p class="note">No chat on file for this contact.</p>`;
+ return `<div class="chat">`+r.chat.map(m=>`<div class="msg ${m.who}">${esc(m.text)}<small>${m.who==="us"?"We wrote":"They wrote"} · ${ago(m.days_ago)}</small></div>`).join("")+`</div>`;
+}
+function detailHTML(r){
+ const phrase=isBooked(r)?"Already booked":{High:"Good chance to book",Medium:"Some chance to book",Low:"Low chance to book"}[r.chance];
+ const consentLine=r.consent?`<span class="badge High">Said yes to marketing</span>`:`<span class="badge warn">Has not said yes to marketing</span>`;
+ const noConsent=!r.consent&&r.kind==="lead"&&r.lastWho==="us"?`<p class="note w">They have not agreed to marketing. A follow-up they didn't ask for may need a check with your PDPA adviser before you send it.</p>`:"";
+ const next=r.kind==="lead"?(r.lastWho==="them"?"They wrote last: reply today.":!isQuiet(r)?"We replied recently. Give them a few days.":r.chance==="High"?"Worth a call or a personal message today.":r.chance==="Medium"?"Send one friendly question.":"No staff time needed for now."):
+                          (r.chance==="High"?"Invite back for a review with Dr Cheak.":"Add to the morning huddle list.");
+ return `<div class="ph">${avatar(r.name)}<div><h3>${esc(r.name)}</h3><span class="badge ${isBooked(r)?"Low":r.chance}" style="margin-top:4px">${phrase}</span></div></div>
+  <p class="note" style="margin-top:10px">${esc(r.treatment||"")} · ${esc(place(r.source||""))} · ${esc(r.phone||"")}<br>${consentLine}</p>
+  ${r.kind==="lead"?`<h4>Their chat${nz(r.msgs)>r.chat.length?` (latest of ${nz(r.msgs)} messages)`:""}</h4>${chatHTML(r)}`:""}
+  <h4>Why we think so</h4><ul class="why">${r.reasons.map(x=>`<li>${esc(x)}</li>`).join("")||"<li>Not enough information yet</li>"}</ul>
+  <h4>What to do</h4><div class="next">${next}</div>
+  <h4>A message you can use. Read it, change it, then send it yourself</h4>
+  <textarea id="draftBox">${esc(draftReply(r))}</textarea>
+  <div style="margin-top:10px;display:flex;gap:10px;align-items:center"><button class="btn2 pri" id="copyDraft">Copy message</button><span class="note" id="copied" style="margin:0"></span></div>
+  <p class="note">Nothing is sent from here. A person approves every message.</p>${noConsent}`;
+}
+function wireCopy(){const b=$("copyDraft");if(b)b.onclick=()=>{navigator.clipboard?.writeText($("draftBox").value);$("copied").textContent="Copied. Paste it into WhatsApp.";};}
+function renderInbox(){
+ const open=ALL.filter(isOpenLead), waiting=open.filter(r=>r.lastWho==="them"), quiet=open.filter(isQuiet), worth=quiet.filter(r=>r.chance==="High");
+ $("inboxCards").innerHTML=[[open.length,`people messaged us in the last ${INBOX_WINDOW_DAYS} days and haven't booked`],[waiting.length,"wrote last and are waiting for our reply"],[worth.length,"went quiet but look keen. Worth a call"],[open.filter(r=>!r.consent).length,"have not said yes to marketing"]]
+  .map(([n,l])=>`<div class="card stat"><div class="num" data-count="${n}">${n}</div><div class="lbl">${l}</div></div>`).join("");
+ const filters=[["all","Everyone"],["waiting","Waiting for our reply"],["quiet","Went quiet"],["worth","Worth a call"]];
+ $("inboxChips").innerHTML=filters.map(([k,l])=>`<button class="chip" data-f="${k}" aria-pressed="${FILTER===k}">${l}</button>`).join("");
+ $("inboxChips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{FILTER=b.dataset.f;PICK=null;renderInbox();});
+ let rows=FILTER==="waiting"?waiting:FILTER==="quiet"?quiet:FILTER==="worth"?worth:open;
+ if(FILTER==="waiting") rows=[...rows].sort((a,b)=>nz(b.days_since_contact)-nz(a.days_since_contact));
+ const shown=rows.slice(0,100);
+ if(!PICK||!shown.some(r=>r.id===PICK)) PICK=shown.length?shown[0].id:null;
+ $("inboxList").innerHTML=shown.map(r=>{const last=r.chat[r.chat.length-1];
+  const state=r.lastWho==="them"?`<span class="badge warn">Waiting for reply</span>`:isQuiet(r)?`<span class="badge Low">Quiet ${nz(r.days_since_contact)} days</span>`:`<span class="badge Low">We replied ${nz(r.days_since_contact)===0?"today":nz(r.days_since_contact)+"d ago"}</span>`;
+  return `<button class="row" data-id="${r.id}" aria-current="${r.id===PICK}">${avatar(r.name)}<div class="rb"><div class="rt"><span class="nm">${esc(r.name)}</span><span class="badge ${r.chance}">${r.chance}</span></div>
+   <div class="sn">${last?(last.who==="us"?"You: ":"")+esc(last.text):""}</div><div class="meta">${esc(r.treatment)} · ${state}</div></div></button>`;}).join("")||`<p class="note" style="padding:16px">Nobody matches this filter.</p>`;
+ $("inboxList").querySelectorAll(".row").forEach(b=>b.onclick=()=>{PICK=b.dataset.id;renderInbox();});
+ $("inboxCount").textContent=`Showing ${shown.length} of ${rows.length}. Most likely to book first${FILTER==="waiting"?" (here: longest wait first)":""}.`;
+ const r=ALL.find(x=>x.id===PICK);
+ $("inboxPanel").innerHTML=r?detailHTML(r):`<p class="note">Nothing to show.</p>`; wireCopy(); bigNums();
+}
+
+/* --- Get new patients --- */
+function renderGrow(){
+ const L=learnAudiences(ALL);
+ if(!L){ $("audLead").textContent="This needs a list of past enquiries with a 'converted' column (true if they booked), at least 120 rows."; $("audCards").innerHTML=""; $("skipHead").classList.add("hide"); $("skipCards").innerHTML=""; }
+ else{
+  $("audLead").textContent=`We looked at ${L.n} past enquiries. ${pct(L.base)} of them booked. These groups booked more often, by enough that it isn't just luck.`;
+  const good=L.best.map(s=>{const d=describe(s);return `<div class="card audc"><div class="mult">${s.times.toFixed(1)}×</div><div class="note" style="margin:0">as likely to book as an average enquiry</div>
+    <h3>${esc(d.title)}</h3><div class="note" style="margin:0">${pct(s.rate)} booked, out of ${s.n} past enquiries</div>
+    <div class="spec"><b>Ad settings</b><br>${esc(d.spec)}</div><button class="btn2" data-copy="${esc(d.title+" | "+d.spec)}">Copy these ad settings</button></div>`;}).join("");
+  const maybe=L.maybe.filter(m=>!L.best.some(b=>m.parts.every(x=>b.parts.includes(x))||b.parts.every(x=>m.parts.includes(x)))).map(s=>{const d=describe(s);return `<div class="card audc maybe"><span class="tag">Promising, needs more data</span><div class="mult" style="font-size:40px">${s.times.toFixed(1)}×</div><div class="note" style="margin:0">as likely to book as average, but only ${s.n} past enquiries, so it could be luck</div>
+    <h3>${esc(d.title)}</h3><div class="spec" style="margin-bottom:0">${esc(d.spec)}</div></div>`;}).join("");
+  const bad=L.worst.map(s=>{const d=describe(s);return `<div class="card audc"><div class="mult bad">${s.times.toFixed(1)}×</div><div class="note" style="margin:0">as likely to book as average</div>
+    <h3>${esc(d.title)}</h3><div class="note" style="margin:0">${pct(s.rate)} booked, out of ${s.n} past enquiries</div></div>`;}).join("");
+  $("audCards").innerHTML=(good||`<p class="note">No group is clearly better than average yet. More past enquiries are needed.</p>`)+maybe;
+  $("skipHead").classList.toggle("hide",!bad); $("skipCards").innerHTML=bad;
+  [["audCards",L.best.length+(maybe?L.maybe.length:0)],["skipCards",L.worst.length]].forEach(([id,n])=>$(id).style.maxWidth=Math.max(1,Math.min(3,n))*390+"px"); // keep a lone card card-sized, not stretched
+  $("audCards").querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{navigator.clipboard?.writeText(b.dataset.copy);b.textContent="Copied";});
+ }
+ const rows=channelRows().sort((a,b)=>(a.perBooking||1e9)-(b.perBooking||1e9)), maxCost=Math.max(1,...rows.map(r=>r.perBooking||0));
+ $("chanTbl").innerHTML=`<thead><tr><th>Where they found us</th><th>Enquiries</th><th>Booked</th><th>We pay per enquiry (S$)</th><th>One booking costs</th><th>Verdict</th></tr></thead><tbody>`+
+  rows.map(r=>`<tr><td><b>${esc(place(r.s))}</b></td><td>${r.n}</td><td>${r.k} <span class="note">(${pct(r.k/r.n)})</span></td>
+   <td><input type="number" min="0" step="0.5" value="${r.cost}" data-src="${esc(r.s)}"></td>
+   <td><div class="cbar"><i style="width:${r.perBooking>0?Math.max(4,120*r.perBooking/maxCost):0}px"></i><b>${r.perBooking>0?"S$"+r.perBooking.toFixed(0):"-"}</b></div></td>
+   <td><span class="badge ${r.verdict==="Spend more"?"High":r.verdict==="Cut back"?"warn":"Low"}">${r.verdict}</span></td></tr>`).join("")+`</tbody>`;
+ $("chanTbl").querySelectorAll("input").forEach(i=>i.onchange=()=>{COST[i.dataset.src]=Number(i.value)||0;renderGrow();});
+ const seed=ALL.filter(r=>r.converted&&r.consent), retarget=ALL.filter(r=>r.kind==="lead"&&!r.converted&&r.consent);
+ $("listCards").innerHTML=
+  `<div class="card stat"><div class="num">${seed.length}</div><div class="lbl">people who booked and said yes to marketing. Give this to the ad platform so it can find people like them.</div><p style="margin:14px 0 0"><button class="btn2 pri" data-dl="seed">Download list</button></p></div>
+   <div class="card stat"><div class="num">${retarget.length}</div><div class="lbl">people who enquired, haven't booked, and said yes to marketing. Show them ads again.</div><p style="margin:14px 0 0"><button class="btn2 pri" data-dl="retarget">Download list</button></p></div>
+   <div class="card stat"><div class="num">${ALL.filter(r=>!r.consent).length}</div><div class="lbl">have not said yes to marketing. They are on neither list.</div></div>`;
+ $("listCards").querySelectorAll("[data-dl]").forEach(b=>b.onclick=()=>download(b.dataset.dl+".csv",toCSV(b.dataset.dl==="seed"?seed:retarget,["id","name","phone","treatment","source"])));
+}
+
+/* --- Everyone --- */
+function dbRows(){
+ const q=$("dbq").value.toLowerCase(),t=$("dbType").value,c=$("dbChance").value,k=$("dbConsent").value,st=$("dbStatus").value;
+ return ALL.filter(r=>(!t||r.kind===t)&&(!c||r.chance===c)&&(!st||(st==="booked")===isBooked(r))&&(!k||(k==="1")===!!r.consent)&&(!q||[r.name,r.treatment,r.source,r.area].join(" ").toLowerCase().includes(q)))
+  .sort((a,b)=>isBooked(a)-isBooked(b)||b.score-a.score);
+}
+function renderDB(){
+ const rows=dbRows(), shown=rows.slice(0,150);
+ $("dbTbl").innerHTML=`<thead><tr><th>Name</th><th>Who</th><th>Interested in</th><th>Found us via</th><th>Chance to book</th><th>OK to market to</th></tr></thead><tbody>`+
+  shown.map(r=>`<tr class="click" data-id="${r.id}"><td><div style="display:flex;gap:10px;align-items:center">${avatar(r.name)}<div><b>${esc(r.name)}</b><div class="note" style="margin:0">${esc(r.phone||"")}</div></div></div></td>
+   <td>${r.kind==="patient"?"Patient":isBooked(r)?"Enquiry, booked":"Enquiry, not booked yet"}</td><td>${esc(r.treatment)}</td><td>${esc(place(r.source))}</td>
+   <td>${isBooked(r)?`<span class="badge Low">Booked</span>`:`<span class="badge ${r.chance}">${r.chance}</span>`}</td><td>${r.consent?"Yes":"No"}</td></tr>`).join("")+`</tbody>`;
+ $("dbTbl").querySelectorAll("tr.click").forEach(tr=>tr.onclick=()=>{const r=ALL.find(x=>x.id===tr.dataset.id);$("dlgBody").innerHTML=detailHTML(r);wireCopy();$("dlg").showModal();});
+ $("dbCount").textContent=`Showing ${shown.length} of ${rows.length}. People not booked yet come first, most likely to book on top.`;
+}
+["dbq","dbType","dbChance","dbStatus","dbConsent"].forEach(i=>$(i).addEventListener("input",renderDB));
+$("dbCsv").onclick=()=>download("contacts.csv",toCSV(dbRows(),["id","name","phone","kind","treatment","source","chance","consent"]));
+$("dlgClose").onclick=()=>$("dlg").close();
+
+function renderAbout(){
+ let t=`<p>Every person gets points for things that usually go with booking: asking the price, asking for a time, replying fast, being due for a return visit, a package about to run out. The points add up to <b>High, Medium or Low chance to book</b>. Each person's "Why we think so" list shows the exact reasons, so your team can disagree with it.</p><p>Nothing here sends a message. It suggests; a person decides.</p>`;
+ if(DEMO&&typeof DATA!=="undefined"){const h=DATA.res.holdout_tier_conv;
+  t+=`<p><b>This screen runs on made-up patients.</b> On a separate set of made-up enquiries that were held back, ${pct(h.Hot.rate)} of the High group booked, against ${pct(h.Cold.rate)} of the Low group. That shows the ranking works as built. It does <b>not</b> show how well it will work in your clinic. For that we need a de-identified export from Plato and a month of watching real results. The ad costs are guesses until you type your own.</p>`;}
+ else t+=`<p>These results come from your uploaded file and have not been independently tested. Treat them as a starting point.</p>`;
+ $("aboutBody").innerHTML=t;
+}
+
+/* --- shell --- */
+const RENDER={today:renderToday,inbox:renderInbox,grow:renderGrow,db:renderDB};
+function show(tab){TAB=tab;TABS.forEach(s=>$(s).classList.toggle("hide",s!==tab));
+ document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===tab));
+ RENDER[tab](); if(tab!=="inbox")bigNums(); const el=$(tab); el.style.animation="none"; void el.offsetWidth; el.style.animation="";}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{show(b.dataset.tab);window.scrollTo({top:0,behavior:"smooth"});});
+
+/* ---------- 6. CSV in / out ---------- */
+function toCSV(rows,cols){const q=v=>{v=v===null||v===undefined?"":String(v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};
+ return [cols.join(","),...rows.map(r=>cols.map(c=>q(r[c])).join(","))].join("\n")+"\n";}
+function download(name,text){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"text/csv"}));a.download=name;a.click();}
+function parseCSV(t){const rows=[];let r=[],f="",q=false;for(let i=0;i<t.length;i++){const c=t[i];
+ if(q){if(c=='"'){if(t[i+1]=='"'){f+='"';i++;}else q=false;}else f+=c;}
+ else if(c=='"')q=true;else if(c==","){r.push(f);f="";}else if(c=="\n"||c=="\r"){if(c=="\r"&&t[i+1]=="\n")i++;r.push(f);f="";if(r.some(x=>x!==""))rows.push(r);r=[];}else f+=c;}
+ if(f!==""||r.length){r.push(f);rows.push(r);}return rows;}
+const truthy=v=>["true","1","yes","y","t"].includes(String(v).trim().toLowerCase());
+function loadCSV(text){
+ const rows=parseCSV(text), head=rows[0].map(x=>x.trim()), missing=["id","kind","consent"].filter(c=>!head.includes(c));
+ if(missing.length){alert("The file is missing these columns: "+missing.join(", ")+".\nUse 'Get the sample file' to see what is expected.");return;}
+ const out=rows.slice(1).map(v=>{const o={};head.forEach((c,i)=>{const x=(v[i]??"").trim();
+   o[c]=BOOL.includes(c)?(x===""?(c==="consent"?false:null):truthy(x)):NUM.includes(c)?(x===""?null:Number(x)):x;});
+   o.kind=String(o.kind).toLowerCase();return o;}).filter(o=>o.kind==="lead"||o.kind==="patient");
+ if(!out.length){alert("No rows have kind = lead or patient.");return;}
+ DEMO=false; ALL=prepare(out); PICK=null; FILTER="all"; start();
+}
+$("up").addEventListener("change",e=>{const f=e.target.files[0];if(f)f.text().then(loadCSV);e.target.value="";});
+$("rst").onclick=()=>{DEMO=true;ALL=prepare(DATA.contacts);PICK=null;FILTER="all";start();};
+$("tpl").onclick=()=>{
+ const ex=[{id:"L001",name:"Mei Ling T.",phone:"+65 9xxx 1234",kind:"lead",age:29,area:"Central",treatment:"Pigmentation laser",source:"Referral",consent:"true",asked_price:"true",asked_slots:"false",msgs:4,days_since_contact:6,reply_latency_h:2,days_since_enquiry:6,last_message:"Hi, how much is pigmentation laser?",last_from:"them",converted:"false"},
+  {id:"P001",name:"Siti R.",phone:"+65 8xxx 5678",kind:"patient",age:41,area:"East",treatment:"Facial",source:"Existing patient",consent:"true",visits:12,last_visit_days:35,next_booking:"false",sessions_left:3,package_expiry_days:20,spend:2400}];
+ download("contacts_template.csv",toCSV(ex,COLUMNS));};
+function renderPeek(){ // a real contact from the data, so the hero shows the product, not decoration
+ const c=ALL.filter(isOpenLead).filter(r=>r.lastWho==="them").sort((a,b)=>b.score-a.score)[0], el=$("peek");
+ if(!c){el.classList.add("hide");return;}
+ const last=c.chat[c.chat.length-1], d=nz(c.days_since_contact);
+ el.classList.remove("hide");
+ el.innerHTML=`<div class="k">Next up for your team</div><div class="who">${avatar(c.name)}<div><b>${esc(c.name)}</b><span class="badge High">High chance to book</span></div></div>
+  <div class="bub">${esc(last.text)}<small>Waiting for a reply · ${d===0?"today":d+" day"+(d===1?"":"s")+" ago"}</small></div>
+  <button id="peekGo">Open chat and draft reply →</button>`;
+ $("peekGo").onclick=()=>{PICK=c.id;go("inbox","all");};
+}
+function start(){
+ $("mode").classList.toggle("hide",!DEMO); $("rst").classList.toggle("hide",DEMO);
+ renderAbout(); renderPeek(); show(TAB);
+}
+ALL=prepare(DATA.contacts); start();
+</script></body></html>

@@ -1,0 +1,176 @@
+{
+ "seed": 7,
+ "n": 2400,
+ "base_rate": 0.2925,
+ "rules_auc_holdout": 0.5998752316129574,
+ "rules_auc_holdout_lead": 0.7056435416308029,
+ "rules_auc_holdout_patient": 0.41987179487179493,
+ "logistic_auc_holdout": 0.7090010149070289,
+ "holdout_tier_conv": {
+  "Cold": {
+   "rate": 0.2565789473684211,
+   "n": 304
+  },
+  "Hot": {
+   "rate": 0.46153846153846156,
+   "n": 156
+  },
+  "Warm": {
+   "rate": 0.23461538461538461,
+   "n": 260
+  }
+ },
+ "hot_over_cold": 1.7988165680473371,
+ "all_tier_counts": {
+  "Cold": 1028,
+  "Warm": 895,
+  "Hot": 477
+ },
+ "audience_base_rate_train_leads": 0.26577437858508607,
+ "top_segments": [
+  {
+   "segment": "Referral",
+   "n": 108,
+   "conv": 0.42592592592592593,
+   "lift": 1.6025845989874765,
+   "lift_lo": 1.26720517019703
+  },
+  {
+   "segment": "Acne scar treatment \u00d7 36-45",
+   "n": 70,
+   "conv": 0.38571428571428573,
+   "lift": 1.451284686536485,
+   "lift_lo": 1.0553130792656498
+  },
+  {
+   "segment": "Pigmentation laser \u00d7 28-35",
+   "n": 59,
+   "conv": 0.3898305084745763,
+   "lift": 1.4667723448359955,
+   "lift_lo": 1.0376913008849382
+  },
+  {
+   "segment": "North-East",
+   "n": 173,
+   "conv": 0.32947976878612717,
+   "lift": 1.2396972595334137,
+   "lift_lo": 0.9926045725788228
+  },
+  {
+   "segment": "36-45",
+   "n": 333,
+   "conv": 0.3063063063063063,
+   "lift": 1.15250502300862,
+   "lift_lo": 0.9754085740723489
+  },
+  {
+   "segment": "Acne scar treatment",
+   "n": 186,
+   "conv": 0.3064516129032258,
+   "lift": 1.1530517521466697,
+   "lift_lo": 0.9205933287825847
+  },
+  {
+   "segment": "Google search",
+   "n": 208,
+   "conv": 0.2980769230769231,
+   "lift": 1.121541228555617,
+   "lift_lo": 0.9031455207518958
+  },
+  {
+   "segment": "Pigmentation laser",
+   "n": 171,
+   "conv": 0.29239766081871343,
+   "lift": 1.10017249358408,
+   "lift_lo": 0.8630660394811356
+  }
+ ],
+ "avoid_segments": [
+  {
+   "segment": "Facial \u00d7 <=27",
+   "n": 42,
+   "conv": 0.14285714285714285,
+   "lift": 0.5375128468653647,
+   "lift_lo": 0.2526908620741968
+  },
+  {
+   "segment": "Meta ad \u00d7 Body contouring",
+   "n": 65,
+   "conv": 0.13846153846153847,
+   "lift": 0.5209739900387382,
+   "lift_lo": 0.2806518155509966
+  },
+  {
+   "segment": "Meta ad \u00d7 Facial",
+   "n": 58,
+   "conv": 0.15517241379310345,
+   "lift": 0.5838501612503101,
+   "lift_lo": 0.3154704927309607
+  },
+  {
+   "segment": "Body contouring \u00d7 <=27",
+   "n": 56,
+   "conv": 0.17857142857142858,
+   "lift": 0.6718910585817061,
+   "lift_lo": 0.37624957659877734
+  },
+  {
+   "segment": "Body contouring \u00d7 28-35",
+   "n": 66,
+   "conv": 0.18181818181818182,
+   "lift": 0.684107259646828,
+   "lift_lo": 0.4032932550845106
+  }
+ ],
+ "top_segment_lift_lo": 1.26720517019703,
+ "source_econ": [
+  {
+   "source": "WhatsApp walk-in",
+   "leads": 153,
+   "conv": 0.2875816993464052,
+   "assumed_cpl": 3.0,
+   "cost_per_conversion": 10.431818181818183
+  },
+  {
+   "source": "Referral",
+   "leads": 108,
+   "conv": 0.42592592592592593,
+   "assumed_cpl": 6.0,
+   "cost_per_conversion": 14.08695652173913
+  },
+  {
+   "source": "Instagram organic",
+   "leads": 202,
+   "conv": 0.24752475247524752,
+   "assumed_cpl": 4.0,
+   "cost_per_conversion": 16.16
+  },
+  {
+   "source": "Google search",
+   "leads": 208,
+   "conv": 0.2980769230769231,
+   "assumed_cpl": 18.0,
+   "cost_per_conversion": 60.38709677419355
+  },
+  {
+   "source": "Meta ad",
+   "leads": 375,
+   "conv": 0.20266666666666666,
+   "assumed_cpl": 14.0,
+   "cost_per_conversion": 69.07894736842105
+  }
+ ],
+ "seed_size": 488,
+ "suppress_size": 1026,
+ "retarget_size": 762,
+ "consent_leak": 0,
+ "no_consent_total": 740,
+ "pass": {
+  "rules_auc": false,
+  "hot_over_cold": false,
+  "top_segment": true,
+  "consent_leak": true
+ },
+ "all_pass": false,
+ "output_hash": "3d79b22dfa0397cc"
+}

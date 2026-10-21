@@ -1,0 +1,176 @@
+{
+ "seed": 11,
+ "n": 2128,
+ "base_rate": 0.2730263157894737,
+ "rules_auc_holdout": 0.631930540106291,
+ "rules_auc_holdout_lead": 0.6845825984714873,
+ "rules_auc_holdout_patient": 0.5168181818181818,
+ "logistic_auc_holdout": 0.6835619824496354,
+ "holdout_tier_conv": {
+  "Cold": {
+   "rate": 0.19213973799126638,
+   "n": 229
+  },
+  "Hot": {
+   "rate": 0.42105263157894735,
+   "n": 133
+  },
+  "Warm": {
+   "rate": 0.26714801444043323,
+   "n": 277
+  }
+ },
+ "hot_over_cold": 2.191387559808612,
+ "all_tier_counts": {
+  "Warm": 892,
+  "Cold": 829,
+  "Hot": 407
+ },
+ "audience_base_rate_train_leads": 0.27102803738317754,
+ "top_segments": [
+  {
+   "segment": "Referral",
+   "n": 105,
+   "conv": 0.4380952380952381,
+   "lift": 1.6164203612479475,
+   "lift_lo": 1.2804655514939547
+  },
+  {
+   "segment": "Acne scar treatment \u00d7 28-35",
+   "n": 45,
+   "conv": 0.4666666666666667,
+   "lift": 1.7218390804597703,
+   "lift_lo": 1.215184386826061
+  },
+  {
+   "segment": "Laser hair removal \u00d7 36-45",
+   "n": 46,
+   "conv": 0.43478260869565216,
+   "lift": 1.6041979010494753,
+   "lift_lo": 1.114609626770135
+  },
+  {
+   "segment": "Laser hair removal",
+   "n": 153,
+   "conv": 0.3464052287581699,
+   "lift": 1.278115844038765,
+   "lift_lo": 1.0168835341483304
+  },
+  {
+   "segment": "WhatsApp walk-in",
+   "n": 154,
+   "conv": 0.34415584415584416,
+   "lift": 1.2698163905060458,
+   "lift_lo": 1.0099837668042013
+  },
+  {
+   "segment": "28-35",
+   "n": 330,
+   "conv": 0.30303030303030304,
+   "lift": 1.118077324973877,
+   "lift_lo": 0.9443527255152372
+  },
+  {
+   "segment": "North",
+   "n": 117,
+   "conv": 0.3333333333333333,
+   "lift": 1.2298850574712643,
+   "lift_lo": 0.9387004736873655
+  },
+  {
+   "segment": "Acne scar treatment",
+   "n": 167,
+   "conv": 0.30538922155688625,
+   "lift": 1.1267809209167874,
+   "lift_lo": 0.8875907760168605
+  }
+ ],
+ "avoid_segments": [
+  {
+   "segment": "Meta ad \u00d7 Injectables",
+   "n": 64,
+   "conv": 0.125,
+   "lift": 0.4612068965517242,
+   "lift_lo": 0.2388005851760089
+  },
+  {
+   "segment": "Meta ad \u00d7 Facial",
+   "n": 62,
+   "conv": 0.12903225806451613,
+   "lift": 0.4760845383759733,
+   "lift_lo": 0.2466829012618506
+  },
+  {
+   "segment": "Body contouring \u00d7 36-45",
+   "n": 47,
+   "conv": 0.1702127659574468,
+   "lift": 0.6280264123257521,
+   "lift_lo": 0.32787228129835877
+  },
+  {
+   "segment": "Meta ad \u00d7 Pigmentation laser",
+   "n": 58,
+   "conv": 0.1724137931034483,
+   "lift": 0.6361474435196196,
+   "lift_lo": 0.35583733285314023
+  },
+  {
+   "segment": "Injectables \u00d7 36-45",
+   "n": 43,
+   "conv": 0.18604651162790697,
+   "lift": 0.68644747393745,
+   "lift_lo": 0.3594327610590828
+  }
+ ],
+ "top_segment_lift_lo": 1.2804655514939547,
+ "source_econ": [
+  {
+   "source": "WhatsApp walk-in",
+   "leads": 154,
+   "conv": 0.34415584415584416,
+   "assumed_cpl": 3.0,
+   "cost_per_conversion": 8.716981132075471
+  },
+  {
+   "source": "Referral",
+   "leads": 105,
+   "conv": 0.4380952380952381,
+   "assumed_cpl": 6.0,
+   "cost_per_conversion": 13.695652173913043
+  },
+  {
+   "source": "Instagram organic",
+   "leads": 165,
+   "conv": 0.23636363636363636,
+   "assumed_cpl": 4.0,
+   "cost_per_conversion": 16.923076923076923
+  },
+  {
+   "source": "Google search",
+   "leads": 178,
+   "conv": 0.29213483146067415,
+   "assumed_cpl": 18.0,
+   "cost_per_conversion": 61.61538461538462
+  },
+  {
+   "source": "Meta ad",
+   "leads": 361,
+   "conv": 0.19667590027700832,
+   "assumed_cpl": 14.0,
+   "cost_per_conversion": 71.1830985915493
+  }
+ ],
+ "seed_size": 402,
+ "suppress_size": 808,
+ "retarget_size": 766,
+ "consent_leak": 0,
+ "no_consent_total": 588,
+ "pass": {
+  "rules_auc": true,
+  "hot_over_cold": true,
+  "top_segment": true,
+  "consent_leak": true
+ },
+ "all_pass": true,
+ "output_hash": "c8f955158ea6d45b"
+}
