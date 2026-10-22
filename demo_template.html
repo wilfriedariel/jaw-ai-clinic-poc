@@ -184,7 +184,7 @@ input:focus,select:focus{outline:2px solid var(--berry);outline-offset:1px}
 .lockup b{font-family:Cambria,Georgia,serif;font-weight:700;font-size:17px;letter-spacing:.14em;color:var(--ink)}
 .lockup i{font-style:normal;font-size:10.5px;letter-spacing:.32em;color:#d9603d;margin-top:4px;font-weight:600}
 .lockup small{margin-top:5px}
-.clinic-logo{height:44px;width:auto;display:block}
+.logo-plate{background:#fff;border-radius:16px;padding:6px 16px;display:inline-flex;box-shadow:0 1px 0 rgba(0,0,0,.04),0 4px 14px rgba(140,47,94,.08)}.clinic-logo{height:84px;width:auto;display:block}@media (max-width:520px){.clinic-logo{height:60px}}
 .sep{width:1px;height:34px;background:color-mix(in srgb,var(--ink) 18%,transparent);margin:0 6px}
 /* whatsapp + contact */
 .wa{display:inline-flex;align-items:center;gap:6px;background:#1fa855;color:#fff;border:0;border-radius:10px;padding:7px 12px;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap}
@@ -251,7 +251,7 @@ dialog::backdrop{background:rgba(30,12,20,.5);backdrop-filter:blur(3px)}
 <!-- ================= HERO ================= -->
 <div class="hero"><div class="hero-in">
  <div class="top">
-  <div class="brand"><div class="lockup" id="lockup"><b>S AESTHETICS CLINIC</b><i>LASER &amp; AESTHETICS</i></div><span class="sep"></span><div>Lead Desk<small>for the clinic team</small></div></div>
+  <div class="brand"><span class="logo-plate"><img class="clinic-logo" src="/*LOGO*/" alt="S Aesthetics Clinic"></span><span class="sep"></span><div>Lead Desk<small>for the clinic team</small></div></div>
   <div class="hbtns">
    <label class="btn pri">Load my own contacts<input id="up" type="file" accept=".csv,text/csv" hidden></label>
    <button class="btn" id="tpl">Get the sample file</button>

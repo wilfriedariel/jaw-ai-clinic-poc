@@ -4,7 +4,7 @@ Run: python3 -I pipeline.py   (deterministic, seed fixed)
 Simplifications: rules are hand-set points (upgrade path: fit weights once real
 Plato history exists); cost-per-lead is an assumed constant per source.
 """
-import hashlib, json, math
+import base64, hashlib, json, math
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -242,7 +242,7 @@ def main():
         d.update(score=r.score, tier=r.tier, why=r.why, action=r.action)
         demo.append(d)
     payload = dict(res=res, contacts=demo)
-    html = (HERE / "demo_template.html").read_text().replace("/*DATA*/", "const DATA=" + json.dumps(payload, default=str) + ";")
+    html = (HERE / "demo_template.html").read_text().replace("/*DATA*/", "const DATA=" + json.dumps(payload, default=str) + ";").replace("/*LOGO*/", "data:image/png;base64," + base64.b64encode((HERE / "clinic_logo.png").read_bytes()).decode())
     (HERE / "demo.html").write_text(html)
     print(json.dumps({k: res[k] for k in ("rules_auc_holdout", "rules_auc_holdout_lead", "rules_auc_holdout_patient",
                                           "logistic_auc_holdout", "hot_over_cold", "holdout_tier_conv",

@@ -46,7 +46,7 @@ If any fails, the result stands; no second fix round without a new contract.
 - Scoring, seed, thresholds, results.json unchanged. Parity 2128/2128.
 
 ## Addendum 4 (2026-10-21, four requests from Joyce; scoring untouched)
-1. **Clinic mark.** The proposal deck contains no logo image (checked: `ppt/media` is empty), only the text lockup "S AESTHETICS CLINIC / LASER & AESTHETICS" in Cambria with a terracotta tagline. The header now uses that lockup. It is the deck's wording, not a supplied brand file; a real logo file from the clinic is still needed.
+1. **Clinic mark.** The proposal deck contains no logo image (checked: `ppt/media` is empty). The clinic's real logo (arched sunburst mark + "S AESTHETICS CLINIC", supplied by CSF 2026-10-22) is now in the header, embedded in `demo.html` as a data URI from `clinic_logo.png`, on a white plate so it reads in light and dark mode.
 2. **Helpdesk bot** (new tab). Answers only from the clinic's notes, quoting the matching sentences with the note's title. Rule-based word-stem scoring; no match = "I could not find this, I won't guess" and the question is listed as a gap. Clinic can load its own notes (.txt, blank-line separated). The 13 sample notes are made up for the demo (hours, 24h cancellation, 12-month packages are invented examples).
    - Pre-registered checks (`parity_test.js`): 8 fixed questions hit the intended note, 2 off-topic questions return nothing, uploaded notes parse and answer.
    - **Known failure, reported not gated:** "Can I take a photo of Dr Cheak?" is answered from "Booking a consultation" (matches "photo" and "Cheak" in a note about photo ID). Stem matching cannot tell the senses apart. Upgrade path: embedding search plus a quote-only LLM with a labelled question set.
